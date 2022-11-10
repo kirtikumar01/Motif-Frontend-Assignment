@@ -1,0 +1,41 @@
+.userTag{
+    min-width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #E54065;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.mainItemDiv{
+    padding: 1rem 1.5rem;
+    border: 1px solid #CFD2DC;
+    border-radius: 5px;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    background: #ffffff;
+}
+.contentDiv{
+    color: #636363;
+}
+.contentDiv p{
+    margin-top: 0;
+}
+.favourite{
+    color:#E54065;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-left: 1rem;
+}
+.read{
+    background: #F2F2F2;
+}
+.reading{
+    border: 1px solid #E54065;
+}

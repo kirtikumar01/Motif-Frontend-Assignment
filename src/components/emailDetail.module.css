@@ -1,0 +1,39 @@
+.userTag{
+    min-width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #E54065;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.headerDiv{
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+.subjectDiv{
+    flex: 1;
+}
+.mainDiv{
+    color: #636363;
+    border: 1px solid #CFD2DC;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    padding-right: 40px;
+}
+.favBtn{
+    background: #E54065;
+    color: #ffffff;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+}
+.contentDiv{
+    padding-left: 70px; 
+}

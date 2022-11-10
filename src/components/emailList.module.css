@@ -1,0 +1,36 @@
+.main{
+    min-height: 100vh;
+    padding: 20px;
+}
+.filterText{
+    color: black;
+    /* font-weight: bold; */
+    font-size: 1.1rem;
+}
+.mainFilterDiv{
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.filterBtnDiv{
+    flex: 1;
+}
+.filterBtn{
+    border: none;
+    background: transparent;
+    border-radius: 50px;
+    font-size: 1rem;
+    padding: 5px 10px;
+}
+.filterBtnActive{
+    background: #E1E4EA;
+}
+.itemDiv{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.itemDiv > div{
+    flex : 1;
+}
