@@ -15,6 +15,8 @@ const EmailList = () => {
 
     const [pageNum, setPageNum] = React.useState(0);
 
+    const [selectedItems, setSelectedItems] = React.useState([]);
+
     const pageSize = 5;
 
     const filterClick = (s) => {
@@ -119,6 +121,30 @@ const EmailList = () => {
         })
     }, [])
 
+    const bulkAction = (action) => {
+        setEmailList((p) => {
+            return p.map((e) => {
+                if(selectedItems.indexOf(e.id)>=0){
+                    let obj = {...e}
+                    if(action==="read"){
+                        obj.read=true;
+                        obj.reading=true;
+                    }
+                    else if(action==="unread"){
+                        obj.read=false;
+                        obj.reading=false;
+                    }
+                    else if(action==="favorite"){
+                        obj.favorite=true;
+                    }
+                    console.log(obj)
+                    return obj;
+                }
+                return e;
+            })
+        })
+    }
+
     return (
         <>
             <section className={
@@ -213,6 +239,38 @@ const EmailList = () => {
                             }
                     }>next</button>
                 </div>
+                {selectedItems.length>0 && <div style={
+                    {
+                        display: "flex",
+                        gap: "1rem",
+                        marginBottom: "1rem"
+                    }
+                }>
+                    <button className={
+                            detailStyles.favBtn
+                        }
+                        onClick={
+                            () => {
+                                bulkAction("unread")
+                            }
+                    }>Unread</button>
+                    <button className={
+                            detailStyles.favBtn
+                        }
+                        onClick={
+                            () => {
+                                bulkAction("read")
+                            }
+                    }>Read</button>
+                    <button className={
+                            detailStyles.favBtn
+                        }
+                        onClick={
+                            () => {
+                                bulkAction("favorite")
+                            }
+                    }>Favorite</button>
+                </div>}
                 <div className={
                     styles.itemDiv
                 }>
@@ -220,6 +278,18 @@ const EmailList = () => {
                         emailList.filter(filterList).filter(pageFilter).map((item, i) => {
                             return <EmailItem key={i}
                                 {...item}
+                                selectItem={(id, isSelected) => {
+                                    setSelectedItems((p) => {
+                                        if(isSelected){
+                                            return [...p, id]
+                                        }
+                                        let index = p.indexOf(id);
+                                        if(index>=0){
+                                            return p.slice(0, index).concat(p.slice(index+1))
+                                        }
+                                        return p;
+                                    })
+                                }}
                                 onClick={
                                     (id) => getEmailData(id, item)
                                 }/>

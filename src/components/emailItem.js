@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './emailItem.module.css';
 // import moment from 'moment'
 
-const EmailItem = ({from_email, id, from_name, short_description, subject, read, favorite, onClick, reading}) => {
+const EmailItem = ({from_email, id, from_name, short_description, subject, read, favorite, onClick, reading, selectItem}) => {
 
     // console.log("email item - ",id)
 
@@ -20,6 +20,9 @@ const EmailItem = ({from_email, id, from_name, short_description, subject, read,
 
   return (
     <div className={`${styles.mainItemDiv} ${reading?read?styles.read:styles.reading:""}`} onClick={() => {onClick?.call({},id)}}>
+        <div>
+            <input type="checkbox" onClick={(e) => {e.stopPropagation()}} onChange={(e)=>{selectItem(id, e.target.checked)}} />
+        </div>
         <div className={styles.userTag}>
             <span>{from_email[0].toUpperCase()}</span>
         </div>
