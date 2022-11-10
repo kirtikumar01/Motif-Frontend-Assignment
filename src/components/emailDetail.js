@@ -32,7 +32,7 @@ const EmailDetail = ({
             markAsRead(id);
             // console.log("inside useeffect", id)
         }
-    }, [id])
+    }, [id, markAsReading, markAsRead])
 
     return (
         <div className={

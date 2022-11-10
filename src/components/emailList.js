@@ -54,7 +54,7 @@ const EmailList = () => {
     const getEmailData = async (id, item) => {
         let res = await getEmail(id)
         setEmailData({
-            ... res,
+            ...res,
             ...item
         })
     }
@@ -137,7 +137,7 @@ const EmailList = () => {
                                 `${
                                     styles.filterBtn
                                 } ${
-                                    activeFilter == "unread" ? styles.filterBtnActive : ""
+                                    activeFilter === "unread" ? styles.filterBtnActive : ""
                                 }`
                             }
                             onClick={
@@ -149,7 +149,7 @@ const EmailList = () => {
                                 `${
                                     styles.filterBtn
                                 } ${
-                                    activeFilter == "read" ? styles.filterBtnActive : ""
+                                    activeFilter === "read" ? styles.filterBtnActive : ""
                                 }`
                             }
                             onClick={
@@ -161,7 +161,7 @@ const EmailList = () => {
                                 `${
                                     styles.filterBtn
                                 } ${
-                                    activeFilter == "favorites" ? styles.filterBtnActive : ""
+                                    activeFilter === "favorites" ? styles.filterBtnActive : ""
                                 }`
                             }
                             onClick={
@@ -173,7 +173,7 @@ const EmailList = () => {
                                 `${
                                     styles.filterBtn
                                 } ${
-                                    activeFilter == "" ? styles.filterBtnActive : ""
+                                    activeFilter === "" ? styles.filterBtnActive : ""
                                 }`
                             }
                             onClick={
